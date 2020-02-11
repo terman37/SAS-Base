@@ -3,7 +3,7 @@
 libname orion "&path";
 
 proc print data=orion.sales;
-	*var Last_Name First_Name Salary;
+	var Last_Name First_Name Salary;
 	sum Salary;
 run;
 
