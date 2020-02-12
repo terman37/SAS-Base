@@ -16,8 +16,7 @@ data work.subset;
 			gender
 			salary
 			job_title
-			country
-	;
+			country;
 
 run;
 
