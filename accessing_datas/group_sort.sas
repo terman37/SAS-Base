@@ -1,3 +1,5 @@
+%let path=C:\Users\VM\Desktop\DSTI202002\1-LWPG1_001-Prog1\Data;
+libname orion "&path";
 
 *proc sort does not produce a report;
 *if out= is missing will sort in place;
