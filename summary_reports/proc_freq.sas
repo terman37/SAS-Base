@@ -46,3 +46,31 @@ proc freq data=orion.orders ;
    format Order_Date year4. Order_Type ordertypes.;
 run;
 title;
+
+* example4;
+proc format;
+   value ordertypes
+      1='Retail'
+      2='Catalog'
+      3='Internet';
+run;
+
+title 'Revenue from All Orders';
+proc means data=orion.order_fact sum;
+   var Total_Retail_Price;
+   class Order_Date Order_Type;
+   format Order_Date year4. Order_Type ordertypes.;
+run;
+title;
+
+proc univariate data=orion.price_current;
+   var Unit_Sales_Price Factor;
+run;
+
+*example6;
+title 'Number of Missing and Non-Missing Date Values';
+proc means data=orion.staff nmiss n nonobs;
+   var Birth_Date Emp_Hire_Date Emp_Term_Date;
+   class Gender;
+run;
+title;
